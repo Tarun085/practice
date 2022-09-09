@@ -1,0 +1,47 @@
+// C++ program for the above approach
+#include <bits/stdc++.h>
+using namespace std;
+
+// Function to sort the map according
+// to value in a (key-value) pairs
+void sort(map<int, int> &M)
+{
+
+    // Declare a multimap
+    multimap<int, int> MM;
+
+    // Insert every (key-value) pairs from
+    // map M to multimap MM as (value-key)
+    // pairs
+    for (auto &it : M)
+    {
+        MM.insert({it.second, it.first});
+    }
+
+    // Print the multimap
+    for (auto &it : MM)
+    {
+        cout << it.second << ' '
+             << it.first << endl;
+    }
+}
+
+// Driver Code
+int main()
+{
+
+    // Declare Map
+    map<int, int> M = {{1, 6}, {2, 8}, {6, 3}, {9, 8}};
+
+    try
+    {
+        // Function Call
+        sort(M);
+    }
+    catch (int error)
+    {
+        cout << "Error: " << error << endl;
+    }
+
+    return 0;
+}
